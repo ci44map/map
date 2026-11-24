@@ -58,8 +58,8 @@ a{color:var(--accent)}
 .ramplab{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:2px}
 #panelDone{display:none;position:sticky;top:0;z-index:2;width:100%;margin:8px 0}
 
-#stat{position:fixed;z-index:900;left:50%;bottom:14px;transform:translateX(-50%);background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:16px;padding:3px 12px;font-size:13px;color:var(--muted);white-space:nowrap}
-#hint{position:fixed;z-index:900;left:50%;bottom:50px;transform:translateX(-50%);display:flex;align-items:center;gap:8px;background:var(--text);color:#fff;border-radius:8px;padding:8px 8px 8px 14px;max-width:calc(100vw - 24px);font-size:14px}
+#stat{position:fixed;z-index:900;left:calc(296px + (100vw - 296px) / 2);bottom:14px;transform:translateX(-50%);background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:16px;padding:3px 12px;font-size:13px;color:var(--muted);white-space:nowrap}
+#hint{position:fixed;z-index:900;left:calc(296px + (100vw - 296px) / 2);bottom:50px;transform:translateX(-50%);display:flex;align-items:center;gap:8px;background:var(--text);color:#fff;border-radius:8px;padding:8px 8px 8px 14px;width:max-content;max-width:calc(100vw - 320px);font-size:14px}
 #hint button{border:0;background:none;color:#fff;font-size:20px;line-height:1;cursor:pointer;padding:0 6px;min-height:32px}
 #hint[hidden]{display:none}
 #warn{display:none;position:fixed;z-index:1200;left:50%;top:calc(var(--bar) + 10px);transform:translateX(-50%);background:#fff3cd;border:1px solid #c99700;border-radius:6px;padding:6px 12px;font-size:14px;max-width:calc(100vw - 24px)}
@@ -124,6 +124,8 @@ a{color:var(--accent)}
  body.panel-open #panel{display:block}
  body.panel-open #stat,body.panel-open #hint{display:none}
  #panelDone{display:block}
+ #stat,#hint{left:50%}
+ #hint{max-width:calc(100vw - 24px)}
  .row{min-height:38px}
  #search{position:fixed;top:calc(var(--bar) + 8px);left:8px;right:8px;z-index:1150;flex:none}
  #q{box-shadow:0 1px 6px rgba(36,52,71,.25)}
@@ -207,7 +209,7 @@ a{color:var(--accent)}
   <p>Library and Archives Canada (LAC) publishes the digitized C.I. 44 forms and transcribes the information recorded on each one, such as name, occupation, address and place of birth. This project obtained LAC’s master list of these records through an access request. Because of faded writing, the list contains many transcription errors. For records within the project scope, each entry was checked once against the digitized form and corrected or cleaned where needed.</p>
 
   <h3 id="about-version">Data version</h3>
-<p><b>Version 2</b>, updated 23 Nov 2026.</p><p>4,041 people in the records, 3,996 of them shown on the map at 861 addresses. This page was built on 23 Nov 2026. Data fingerprint f5bd06.</p><p>What changed: 1744 entries corrected (1744 location source).</p><details><summary>Earlier versions</summary><ul><li>Version 1 (23 Nov 2026): First recorded version.</li></ul></details>
+<p><b>Version 2</b>, updated 23 Nov 2026.</p><p>4,041 people in the records, 3,996 of them shown on the map at 861 addresses. This page was built on 24 Nov 2026. Data fingerprint f5bd06.</p><p>What changed: 1744 entries corrected (1744 location source).</p><details><summary>Earlier versions</summary><ul><li>Version 1 (23 Nov 2026): First recorded version.</li></ul></details>
   <h3 id="about-credits">Sources and credits</h3>
   <ul>
    <li>Records: C.I. 44 forms and index cards, Library and Archives Canada.</li>
