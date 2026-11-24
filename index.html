@@ -58,8 +58,8 @@ a{color:var(--accent)}
 .ramplab{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:2px}
 #panelDone{display:none;position:sticky;top:0;z-index:2;width:100%;margin:8px 0}
 
-#stat{position:fixed;z-index:900;left:calc(296px + (100vw - 296px) / 2);bottom:14px;transform:translateX(-50%);background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:16px;padding:3px 12px;font-size:13px;color:var(--muted);white-space:nowrap}
-#hint{position:fixed;z-index:900;left:calc(296px + (100vw - 296px) / 2);bottom:50px;transform:translateX(-50%);display:flex;align-items:center;gap:8px;background:var(--text);color:#fff;border-radius:8px;padding:8px 8px 8px 14px;width:max-content;max-width:calc(100vw - 320px);font-size:14px}
+#stat{position:fixed;z-index:900;left:calc(296px + (100vw - 296px) / 2);bottom:calc(var(--attr,18px) + 8px);transform:translateX(-50%);background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:16px;padding:3px 12px;font-size:13px;color:var(--muted);white-space:nowrap}
+#hint{position:fixed;z-index:900;left:calc(296px + (100vw - 296px) / 2);bottom:calc(var(--attr,18px) + 44px);transform:translateX(-50%);display:flex;align-items:center;gap:8px;background:var(--text);color:#fff;border-radius:8px;padding:8px 8px 8px 14px;width:max-content;max-width:calc(100vw - 320px);font-size:14px}
 #hint button{border:0;background:none;color:#fff;font-size:20px;line-height:1;cursor:pointer;padding:0 6px;min-height:32px}
 #hint[hidden]{display:none}
 #warn{display:none;position:fixed;z-index:1200;left:50%;top:calc(var(--bar) + 10px);transform:translateX(-50%);background:#fff3cd;border:1px solid #c99700;border-radius:6px;padding:6px 12px;font-size:14px;max-width:calc(100vw - 24px)}
@@ -238,6 +238,13 @@ $('mMulti').textContent=fmt(META.multi); if(!META.multi) $('mMultiTxt').hidden=t
 
 // ---------- map
 const map=L.map('map',{zoomControl:false});
+// keep the count label and the hint clear of the attribution line, however many lines it wraps to
+(function(){
+ const a=document.querySelector('.leaflet-control-attribution');
+ const set=()=>document.documentElement.style.setProperty('--attr',(a?Math.ceil(a.getBoundingClientRect().height):18)+'px');
+ set(); window.addEventListener('resize',set);
+ if(a&&window.ResizeObserver) new ResizeObserver(set).observe(a);
+})();
 L.control.zoom({position:'bottomright'}).addTo(map);
 const base=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',
  {maxZoom:19,attribution:'Tiles &copy; Esri &mdash; Esri, HERE, Garmin, &copy; OpenStreetMap contributors, and the GIS user community'}).addTo(map);
