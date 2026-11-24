@@ -184,27 +184,14 @@ a{color:var(--accent)}
   <p>Under the Chinese Immigration Act, 1923, often called the Chinese Exclusion Act, every person of Chinese origin or descent in Canada had to register with the government within a year, by June 30, 1924. Each registration was recorded on a one-page form, the C.I. 44. The forms are held by <a href="https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?IdNumber=4350360&app=FonAndCol" target="_blank" rel="noopener">Library and Archives Canada</a> and digitized by <a href="https://heritage.canadiana.ca/view/oocihm.lac_mikan_4350360" target="_blank" rel="noopener">Canadiana Heritage</a>.</p>
   <p>This map shows <span id="mShown"></span> people at <span id="mAddr"></span> Toronto-area addresses. <span id="mMultiTxt"><span id="mMulti"></span> of them were recorded at two addresses and appear at both. </span>The remaining <span id="mRest"></span> people (of <span id="mTotal"></span> in the dataset) have no address in the project area or could not be located, so they are not shown. Names are not displayed. The CI44 number lets you <a href="https://www.canada.ca/en/library-archives/collection/research-help/genealogy-family-history/immigration/immigrants-from-china-1885-1952.html" target="_blank" rel="noopener">look up the original form</a>.</p>
 
-  <h3 id="about-read">How to read the map</h3>
-  <ul>
-   <li>Each circle is one address. The more people were registered there, the larger the circle.</li>
-   <li>Colour shows the category chosen under Colour by. When people at one address fall into different categories, the circle is divided like a pie.</li>
-   <li>Heat map shows where people were concentrated, without distinguishing addresses.</li>
-   <li>Tick categories in both Origin and Occupation to combine them. For example, choose only Taishan and only Laundry to see Taishan-origin laundry workers.</li>
-   <li>Use Location source to include or exclude addresses by how their position was found. For example, ticking only the first option shows only addresses matched to a current address point found in the <a href="https://open.toronto.ca/dataset/address-points-municipal-toronto-one-address-repository/" target="_blank" rel="noopener">Toronto One Address Repository</a>.</li>
-   <li>Click a circle to list the people at that address.</li>
-   <li>Click an empty spot on the map to summarise everyone within a chosen radius, from 200 m to 1 km. Only the people currently shown, after your filters, are counted.</li>
-   <li>Use the search box to find an address or street that appears in the records. Addresses that are not in the records cannot be looked up.</li>
-   <li>Download CSV, in the panel, saves the people currently shown, after your filters, with the columns CI44Number, Age, Origin, Gender, CleanAddress, Latitude, Longitude, CleanOccupation and Source. Names are not included. A person recorded at two addresses appears in two rows, and people who could not be located are not included.</li>
-  </ul>
-
   <h3 id="about-fields">What the categories mean</h3>
-  <p><b>Origin</b> is the place of origin recorded on the form, grouped into a short list of areas: counties of Guangdong such as Taishan, Kaiping, Xinhui and Enping, and the city of Guangzhou. “Canada” marks people born in Canada, and “Other” combines all remaining places.</p>
+  <p><b>Origin</b> is the place of birth recorded on the form, grouped into a short list of areas: counties of Guangdong such as Taishan, Kaiping, Xinhui and Enping, and the city of Guangzhou. “Canada” marks people born in Canada, and “Other” combines all remaining places.</p>
   <p><b>Occupation</b> is grouped from the occupation written on the form. A person recorded with two occupations, such as “Labourer (Laundryman)”, is placed in the more specific trade. Laundry and Restaurant include both owners and employees, because the forms often do not say which.</p>
 
   <h3 id="about-locations">How locations were found</h3>
   <p>Addresses on the forms were turned into map coordinates in stages, using the most direct method available for each address.</p>
   <ol>
-   <li><b>OAR (exact).</b> Each address was first looked up in the City of Toronto’s One Address Repository (OAR) on address points. Where that street number still exists, its position is used as it is.</li>
+   <li><b>OAR (exact).</b> Each address was first looked up in the City of Toronto’s <a href="https://open.toronto.ca/dataset/address-points-municipal-toronto-one-address-repository/" target="_blank" rel="noopener">One Address Repository</a> (OAR) on address points. Where that street number still exists, its position is used as it is.</li>
    <li><b>OAR (interpolated).</b> Where the number no longer exists but lies between two numbers that do, its position was estimated between the nearest of those addresses on the same side of the street.</li>
    <li><b>OAR (extrapolated).</b> Where the number falls outside the range of numbers on the street today, its position was extended along the street from the nearest existing addresses.</li>
    <li><b>Google Maps.</b> Some addresses that could not be matched, estimated or extended were looked up in Google Maps.</li>
