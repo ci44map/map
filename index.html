@@ -113,8 +113,12 @@ a{color:var(--accent)}
 #about .lead{font-size:16px;color:var(--muted);margin-bottom:12px}
 
 @media (max-width:720px){
- :root{--bar:52px}
- #bar h1{font-size:17px}#bar p{display:none}
+ :root{--bar:80px}
+ #bar{gap:8px;padding:0 10px}
+ #bar h1{font-size:16px;line-height:1.15;white-space:normal;overflow:visible;text-overflow:clip}
+ #bar p{font-size:12.5px;line-height:1.25;margin-top:3px}
+ #bar .btn{padding:6px 10px;font-size:14px}
+ .wide{display:none}
  #btnFilters{display:inline-block}
  #panel{display:none;left:0;right:0;top:auto;bottom:0;width:auto;max-height:72vh;border-radius:14px 14px 0 0;border-width:1px 0 0;padding:2px 16px 14px}
  body.panel-open #panel{display:block}
@@ -135,7 +139,7 @@ a{color:var(--accent)}
  <div class="brand"><h1>Chinese Residents of Toronto, 1924</h1><p>A map of C.I. 44 registration records</p></div>
  <div id="search"><input id="q" type="search" placeholder="Search an address or street" autocomplete="off" spellcheck="false" aria-label="Search addresses in the records" aria-autocomplete="list" aria-controls="sug" aria-expanded="false"><ul id="sug" role="listbox" hidden></ul></div>
  <button class="btn" id="btnFilters" aria-expanded="false" aria-controls="panel">Filters</button>
- <button class="btn" id="btnAbout">About this map</button>
+ <button class="btn" id="btnAbout">About<span class="wide"> this map</span></button>
 </header>
 <div id="map" role="application" aria-label="Map of addresses"></div>
 <aside id="panel" aria-label="Map controls">
@@ -212,7 +216,7 @@ a{color:var(--accent)}
   </ul>
   <p>Contains information licensed under the <a href="https://www.toronto.ca/city-government/data-research-maps/open-data/open-data-licence/" target="_blank" rel="noopener">Open Government Licence – Toronto</a>.</p>
 
-  <h3 id="about-credits">Contact</h3>
+  <h3 id="about-contact">Contact</h3>
   <p>ci44map@gmail.com</p>
   <button class="btn solid" type="button" id="aboutClose2" style="margin-top:8px">Close</button>
  </div>
